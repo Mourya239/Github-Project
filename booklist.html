@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookNest | Book List</title>
+  <style>
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #dff9fb, #f9f7f7);
+      color: #2d3436;
+    }
+    header {
+      background: linear-gradient(to right, #00b894, #0984e3);
+      padding: 30px;
+      text-align: center;
+      color: #fff;
+      font-size: 2.5em;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      background-color: #fff;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    nav a {
+      text-decoration: none;
+      margin: 0 20px;
+      color: #00b894;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #0984e3;
+    }
+
+.booklist {
+      padding: 50px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+.card {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+      font-size: 1.4em;
+      color: #00b894;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 1em;
+      color: #636e72;
+    }
+ footer {
+      text-align: center;
+      padding: 20px;
+      background: #ecf0f1;
+      color: #636e72;
+      font-size: 0.9em;
+      margin-top: 50px;
+    }
+
+  </style>
+  <script>
+    function showAlert(title) {
+      alert("📖 You selected: " + title);
+    }
+  </script>
+</head>
+<body>
+	 <header>📖 Explore Books</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="booklist.html">Browse Books</a>
+  </nav>
+	<section class="booklist">
+    <div class="card" onclick="showAlert('The Moon Chronicles')">
+      <h3>The Moon Chronicles</h3>
+      <p>A tale of space, solitude, and survival.</p>
+    </div>
+    <div class="card" onclick="showAlert('Cursed Library')">
+      <h3>Cursed Library</h3>
+      <p>Unlock dark secrets in dusty pages.</p>
+    </div>
+    <div class="card" onclick="showAlert('City of Echoes')">
+      <h3>City of Echoes</h3>
+      <p>Where past whispers shape the present.</p>
+    </div>
+    <div class="card" onclick="showAlert('Digital Myths')">
+      <h3>Digital Myths</h3>
+      <p>Tech meets folklore in an epic retelling.</p>
+    </div>
+  </section>
+	<footer>&copy; 2025 BookNest. Created by Team Vision.</footer>
+</body>
+</html>
