@@ -85,6 +85,18 @@
     function showAlert(title) {
       alert("📖 You selected: " + title);
     }
+    // Book search filter
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('searchInput');
+      const cards = document.querySelectorAll('.booklist .card');
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        cards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          card.style.display = title.includes(query) ? '' : 'none';
+        });
+      });
+    });
   </script>
 </head>
 <body>
@@ -93,6 +105,10 @@
     <a href="index.html">Home</a>
     <a href="booklist.html">Browse Books</a>
   </nav>
+
+  <div style="text-align:center; margin: 30px 0 0 0;">
+    <input type="text" id="searchInput" placeholder="Search books..." style="padding: 10px; width: 250px; border-radius: 8px; border: 1px solid #b2bec3; font-size: 1em;">
+  </div>
 
   <section class="booklist" aria-label="List of books">
     <div class="card" tabindex="0" onclick="showAlert('The Moon Chronicles')" onkeypress="if(event.key==='Enter'){showAlert('The Moon Chronicles')}">
