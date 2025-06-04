@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BookNest | Book List</title>
+  <title>BookNest | 📖 Book List</title>
   <style>
- * {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -24,7 +24,6 @@
       font-weight: bold;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
-
     nav {
       background-color: #fff;
       text-align: center;
@@ -43,14 +42,13 @@
       color: #0984e3;
     }
 
-.booklist {
+    .booklist {
       padding: 50px 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
     }
-
-.card {
+    .card {
       background-color: #fff;
       padding: 25px;
       border-radius: 18px;
@@ -71,7 +69,10 @@
       font-size: 1em;
       color: #636e72;
     }
- footer {
+    .card:focus {
+      outline: 2px solid #0984e3;
+    }
+    footer {
       text-align: center;
       padding: 20px;
       background: #ecf0f1;
@@ -79,7 +80,6 @@
       font-size: 0.9em;
       margin-top: 50px;
     }
-
   </style>
   <script>
     function showAlert(title) {
@@ -88,29 +88,31 @@
   </script>
 </head>
 <body>
-	 <header>📖 Explore Books</header>
+  <header>📖 Explore Books</header>
   <nav>
     <a href="index.html">Home</a>
     <a href="booklist.html">Browse Books</a>
   </nav>
-	<section class="booklist">
-    <div class="card" onclick="showAlert('The Moon Chronicles')">
+
+  <section class="booklist" aria-label="List of books">
+    <div class="card" tabindex="0" onclick="showAlert('The Moon Chronicles')" onkeypress="if(event.key==='Enter'){showAlert('The Moon Chronicles')}">
       <h3>The Moon Chronicles</h3>
       <p>A tale of space, solitude, and survival.</p>
     </div>
-    <div class="card" onclick="showAlert('Cursed Library')">
+    <div class="card" tabindex="0" onclick="showAlert('Cursed Library')" onkeypress="if(event.key==='Enter'){showAlert('Cursed Library')}">
       <h3>Cursed Library</h3>
       <p>Unlock dark secrets in dusty pages.</p>
     </div>
-    <div class="card" onclick="showAlert('City of Echoes')">
+    <div class="card" tabindex="0" onclick="showAlert('City of Echoes')" onkeypress="if(event.key==='Enter'){showAlert('City of Echoes')}">
       <h3>City of Echoes</h3>
       <p>Where past whispers shape the present.</p>
     </div>
-    <div class="card" onclick="showAlert('Digital Myths')">
+    <div class="card" tabindex="0" onclick="showAlert('Digital Myths')" onkeypress="if(event.key==='Enter'){showAlert('Digital Myths')}">
       <h3>Digital Myths</h3>
       <p>Tech meets folklore in an epic retelling.</p>
     </div>
   </section>
-	<footer>&copy; 2025 BookNest. Created by Team Vision.</footer>
+
+  <footer>&copy; 2025 BookNest. Created by Team Vision.</footer>
 </body>
 </html>
